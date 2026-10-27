@@ -8,7 +8,7 @@ Remove small, isolated groups of cells ("islands") from a categorical metadata l
 
 ```r
 # install.packages("remotes")
-remotes::install_github("YOUR_GITHUB_USERNAME/clean_islands")
+remotes::install_github("sedatkacar56/clean_islands")
 ```
 
 Dependencies: [Seurat](https://satijalab.org/seurat/) and [dbscan](https://cran.r-project.org/package=dbscan).
