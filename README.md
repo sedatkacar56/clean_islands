@@ -41,7 +41,7 @@ Seurat::DimPlot(obj, group.by = "region_clean", raster = TRUE)
 | `reduction` | `"umap"` | Reduction used for cell positions |
 | `dims` | `1:2` | Dimensions of the reduction |
 | `min_cells` | `300` | Smallest connected group that is kept |
-| `eps` | `NULL` | DBSCAN radius. `NULL` = 1% of the average embedding width (about 0.15 to 0.2 for a typical UMAP) |
+| `eps` | `0.2` | DBSCAN radius in embedding units, suited to a typical UMAP. Set `NULL` to use 1% of the average embedding width instead |
 | `min_pts` | `30` | Neighbors within `eps` a cell needs to count as dense |
 | `suffix` | `"_clean"` | Added to `col` to name the new column |
 | `new_col` | `NULL` | Full name of the new column (overrides `suffix`) |
@@ -56,7 +56,7 @@ Seurat::DimPlot(obj, group.by = "region_clean", raster = TRUE)
 
 ## Tuning
 
-The automatic `eps` is a rule of thumb. **Always check the result with `DimPlot`.**
+The default `eps` is a rule of thumb. **Always check the result with `DimPlot`.**
 
 - `eps` too small: one real region breaks into pieces and some are lost.
 - `eps` too large: separate regions merge together.

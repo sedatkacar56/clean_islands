@@ -19,8 +19,8 @@
 #' @param min_cells Integer. Smallest group of connected cells that is kept.
 #'   Smaller groups are removed. Default `300`.
 #' @param eps Numeric or `NULL`. DBSCAN neighborhood radius in embedding units:
-#'   two cells closer than this count as neighbors. Default `NULL`: 1 percent of
-#'   the average width of the embedding (about 0.15 to 0.2 for a typical UMAP).
+#'   two cells closer than this count as neighbors. Default `0.2`, which suits a
+#'   typical UMAP. Set `NULL` to use 1 percent of the average width of the embedding.
 #'   This is a heuristic, so check the result visually.
 #' @param min_pts Integer. Number of neighbors within `eps` that a cell needs to
 #'   count as part of a dense area. Default `30`.
@@ -63,7 +63,7 @@
 #' @export
 clean_islands <- function(seurat_obj, col, values = NULL,
                           reduction = "umap", dims = 1:2,
-                          min_cells = 300, eps = NULL, min_pts = 30,
+                          min_cells = 300, eps = 0.2, min_pts = 30,
                           suffix = "_clean", new_col = NULL, verbose = TRUE) {
 
   if (!requireNamespace("dbscan", quietly = TRUE)) {

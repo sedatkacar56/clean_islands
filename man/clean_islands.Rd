@@ -11,7 +11,7 @@ clean_islands(
   reduction = "umap",
   dims = 1:2,
   min_cells = 300,
-  eps = NULL,
+  eps = 0.2,
   min_pts = 30,
   suffix = "_clean",
   new_col = NULL,
@@ -38,8 +38,8 @@ Default \code{1:2}.}
 Smaller groups are removed. Default \code{300}.}
 
 \item{eps}{Numeric or \code{NULL}. DBSCAN neighborhood radius in embedding units:
-two cells closer than this count as neighbors. Default \code{NULL}: 1 percent of
-the average width of the embedding (about 0.15 to 0.2 for a typical UMAP).
+two cells closer than this count as neighbors. Default de{0.2}, which suits a
+typical UMAP. Set de{NULL} to use 1 percent of the average width of the embedding.
 This is a heuristic, so check the result visually.}
 
 \item{min_pts}{Integer. Number of neighbors within \code{eps} that a cell needs to
