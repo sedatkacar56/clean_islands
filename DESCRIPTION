@@ -1,0 +1,14 @@
+Package: cleanislands
+Type: Package
+Title: Remove Small Islands From Metadata Labels on a Seurat Embedding
+Version: 0.1.0
+Authors@R: person("Sedat", "Kacar", email = "sedatkacar56@gmail.com", role = c("aut", "cre"))
+Description: Cleans a categorical metadata column of a Seurat object by removing
+    small, isolated groups of cells (islands) and stray cells that sit apart from
+    the main body of each label on a 2D embedding such as UMAP. Cells are grouped
+    with DBSCAN and only groups above a minimum size are kept.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: Seurat, dbscan
