@@ -72,7 +72,7 @@ Early release (0.1.0). Run it on your own label first: the main blobs should sta
 
 ## Acknowledgements
 
-Alhamdulillah. Developed by Dr. Sedat Kacar.
+Alhamdulillah. Developed by Sedat Kacar.
 
 ## License
 
