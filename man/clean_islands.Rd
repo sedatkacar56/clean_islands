@@ -24,8 +24,8 @@ clean_islands(
 \item{col}{Character. Metadata column to clean, for example a region, a
 cluster or a cell type column.}
 
-\item{values}{Character vector or \code{NULL}. Labels of \code{col} to clean. Default
-\code{NULL}: every non-\code{NA} label is cleaned, each one separately. Labels not
+\item{values}{Character vector or \co\code{NULL}. Labels of \code{col} to clean. Default
+\co\code{NULL}: every non-\code{NA} label is cleaned, each one separately. Labels not
 listed here are copied unchanged.}
 
 \item{reduction}{Character. Reduction used for the cell positions.
@@ -37,9 +37,9 @@ Default \code{1:2}.}
 \item{min_cells}{Integer. Smallest group of connected cells that is kept.
 Smaller groups are removed. Default \code{300}.}
 
-\item{eps}{Numeric or \code{NULL}. DBSCAN neighborhood radius in embedding units:
-two cells closer than this count as neighbors. Default de{0.2}, which suits a
-typical UMAP. Set de{NULL} to use 1 percent of the average width of the embedding.
+\item{eps}{Numeric or \co\code{NULL}. DBSCAN neighborhood radius in embedding units:
+two cells closer than this count as neighbors. Default \code{0.2}, which suits a
+typical UMAP. Set \code{NULL} to use 1 percent of the average width of the embedding.
 This is a heuristic, so check the result visually.}
 
 \item{min_pts}{Integer. Number of neighbors within \code{eps} that a cell needs to
@@ -48,7 +48,7 @@ count as part of a dense area. Default \code{30}.}
 \item{suffix}{Character. Added to \code{col} to make the new column name.
 Default \code{"_clean"}.}
 
-\item{new_col}{Character or \code{NULL}. Full name of the new column. Overrides
+\item{new_col}{Character or \co\code{NULL}. Full name of the new column. Overrides
 \code{suffix} when given.}
 
 \item{verbose}{Logical. Print how many cells were kept and removed per
